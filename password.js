@@ -3,9 +3,10 @@
 // check to see if the password is at least 10 characters.
 // check to see if the password is less that 20 characters.
 // check to see if password contains 'Common Passwords'.
-// anyother password, deny permission.
+// check to see if password includes at least one number.
+// any other password, deny permission.
 
-const password = 'CodingIsCool00'
+let password = 'CodingIsCool00'
 if (password === 'CodingIsCool00') {
     console.log('ACCESS GRANTED')
 } else if(password.length < 10) {
@@ -14,5 +15,7 @@ if (password === 'CodingIsCool00') {
         {console.log('Password must be less than 20 Characters')}
      else if(password === 'password12345') {
     console.log('Try Again!')
+} else if(password !== NaN){
+    console.log("Password requires at least one number.")
 } else
 { console.log('PERMISSION DENIED')}
