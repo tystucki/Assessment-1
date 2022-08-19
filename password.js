@@ -15,7 +15,7 @@ if (password === 'CodingIsCool00') {
         {console.log('Password must be less than 20 Characters')}
      else if(password === 'password12345') {
     console.log('Try Again!')
-} else if(password !== NaN){
+} else if(password !== [0-9]){
     console.log("Password requires at least one number.")
-} else
+} else 
 { console.log('PERMISSION DENIED')}
