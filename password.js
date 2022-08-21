@@ -6,16 +6,39 @@
 // check to see if password includes at least one number.
 // any other password, deny permission.
 
-let password = 'CodingIsCool00'
-if (password === 'CodingIsCool00') {
-    console.log('ACCESS GRANTED')
-} else if(password.length < 10) {
-    console.log('Password must be at least 10 Characters!')
-} else if(password.length >= 20)
-        {console.log('Password must be less than 20 Characters')}
-     else if(password === 'password12345') {
-    console.log('Try Again!')
-} else if(password !== [0-9]){
-    console.log("Password requires at least one number.")
-} else 
-{ console.log('PERMISSION DENIED')}
+
+
+let password = 'Abcdefg123'
+// checks variables to make sure requirements are met.
+let minChars = false
+let numCheck = false
+let upperCheck = false
+let letterCheck = false
+
+for (let i = 0; i < password.length; i++){
+    //checking if the character can be converted to a number data type
+    if(isNaN(+password[i])){
+        numCheck = true
+        console.log(password[i])
+    }
+    // checking if the number is uppercase
+    if(password[i] === password[i].toUpperCase() && isNaN(+password[i])){
+    upperCheck = true
+ }
+}
+// check that the password has a letter.
+if(/[a-zA-Z].test(password)/){
+letterCheck = true
+}
+
+
+// check that password meets minimum and maximum characters.
+if(password.length >= 10 && password.length <= 20){
+minChars = true
+} 
+
+if(minChars && letterCheck && upperCheck && numCheck){
+    console.log('Your password fills all the requirements!')
+} else {
+    console.log("Password does not fill all requirements!")
+}
